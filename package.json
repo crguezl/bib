@@ -6,13 +6,15 @@
   "scripts": {
     "push": "git  ci -am \"$(git diff --name-only | tr '\n' ' ')\"; git push",
     "sort": "bibtool -s –sort.format=\"%N(author)\"  *.bib",
-    "bibtool-help": "open http://mirrors.ibiblio.org/CTAN/biblio/bibtex/utils/bibtool/bibtool.pdf"
+    "bibtool-help": "open http://mirrors.ibiblio.org/CTAN/biblio/bibtex/utils/bibtool/bibtool.pdf",
+    "bibtool-keys": "bibtool -f \"%n(author):%2d(year)\" -s –sort.format=\"%N(author)\" -d *.bib",
+    "remove-duplicated": "rm -f single.bib; bibtool -K -d *.bib -o single.bib"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/crguezl/bib.git"
   },
-  "keywords": [],
+  "keywords": ["ull"],
   "author": "Casiano Rodriguez Leon <crguezl@ull.edu.es> (https://crguezl.github.io/)",
   "license": "ISC",
   "bugs": {
